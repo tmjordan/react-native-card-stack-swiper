@@ -40,7 +40,7 @@ export default class CardStack extends Component {
 
     componentWillMount() {
         this._panResponder = PanResponder.create({
-            onStartShouldSetPanResponder: (evt, gestureState) => true,
+            onStartShouldSetPanResponder: (evt, gestureState) => false,
             onStartShouldSetPanResponderCapture: (evt, gestureState) => false,
             onMoveShouldSetPanResponder: (evt, gestureState) =>  {
                 const isVerticalSwipe = Math.sqrt(
