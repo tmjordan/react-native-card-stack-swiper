@@ -75,6 +75,7 @@ export default class CardStack extends Component {
             onPanResponderTerminationRequest: (evt, gestureState) => true,
             onPanResponderRelease: (evt, gestureState) => {
                 this.props.onSwipeEnd();
+                this.props.onPanResponderRelease(evt, gestureState);
                 const currentTime = new Date().getTime();
                 const swipeDuration = currentTime-this.state.touchStart;
                 const { sindex } = this.state;
@@ -462,6 +463,7 @@ CardStack.propTypes = {
     onSwiped: PropTypes.func,
     onSwipedAll: PropTypes.func,
     onPanResponderMove: PropTypes.func,
+    onPanResponderRelease: PropTypes.func,
 
     disableBottomSwipe: PropTypes.bool,
     disableLeftSwipe: PropTypes.bool,
@@ -494,6 +496,7 @@ CardStack.defaultProps = {
         console.log('onSwipedAll')
     },
     onPanResponderMove: () => null,
+    onPanResponderRelease: () => null,
 
     disableBottomSwipe: false,
     disableLeftSwipe: false,
