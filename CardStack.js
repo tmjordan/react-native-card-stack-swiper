@@ -3,14 +3,12 @@ import PropTypes from 'prop-types'
 import {
     StyleSheet,
     View,
-    //Animated,
+    Animated,
     PanResponder,
     Dimensions,
     Text,
     Platform
 } from 'react-native';
-
-import Animated from 'react-native-reanimated';
 
 const { height, width } = Dimensions.get('window');
 
